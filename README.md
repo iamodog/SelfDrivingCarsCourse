@@ -41,10 +41,20 @@ dynamic object, road, regulatory element, etc.
 ![segmentation](./imgs/segmentation.jpeg)
 
 ### Object Recognition
+Object recognition is the process of recognizing and classifying objects in a
+driving scene. The ouput is a set of bounding boxes and the corresponding 
+labels
 
 ### Depth Estimation
+Depth estimation is the process of estimating a pixel's depth.
+Depth estimation is usually done with stereovision (2 cameras). However, recent
+advances in deep learning has made it possible to train unsupervised models to
+depth estimation.
 
 ### Putting it all together
+If we piece it all together, we get the following:
+
+![vision](./imgs/vision.png)
 
 ## Motion Planning for Self-Driving Cars
 
