@@ -38,7 +38,7 @@ Image segmentation is the process of classifying every pixel of an image into
 a given set of labels. In this case, we can think of different types of labels:
 dynamic object, road, regulatory element, etc.
 
-[segmentation](./imgs/segmentation.jpeg)
+![segmentation](./imgs/segmentation.jpeg)
 
 ### Object Recognition
 
