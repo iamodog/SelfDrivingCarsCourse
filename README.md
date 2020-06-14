@@ -57,4 +57,50 @@ If we piece it all together, we get the following:
 ![vision](./imgs/vision.png)
 
 ## Motion Planning for Self-Driving Cars
+The motion planning task can be grouped into a list of behaviours:
+  * follow lead car
+  * make a U-turn
+  * decelerate to stop
+  * yied
+  * etc.
 
+The motion planner uses a behavioural planner to choose a behaviour according
+to the driving scenario. And then a local planner computes, for this behavior,
+the path and velocity profile.
+
+This path have to be feasible and collision free. So the following constraints
+apply:
+  * Curvature of the path can't exceed a limit
+  * Maximum magnitude of lateral forces on the tires before stability loss
+  * Static obstacles that blocks portions of the drivable space
+  * Dynamic obstacles
+  * Rules of the road and regulatory elements
+
+### Behaviour planner
+Typically uses one of the 3 following architectures:
+  * Finite state machines. Set of states and their transitions.
+  * Rule-based systems. A set of if conditions.
+  * Reccurent learning based methods.
+
+It takes as inputs:
+  * High definiton road map (road map with all the regulatory elements)
+  * Mission path (Start and end of the trip)
+  * Localization
+  * Perception stack output
+
+And outputs:
+  * Manoeuvre (or behaviour)
+  * Set of constraints (optimal path if there is no other agent or obstacle,
+    speed limit, lane boundaries)
+
+### Local planner
+For the path planning task:
+  * Sampling based planner. Randomly samples the searchspace until a good
+  enough path is found.
+  * Variationnal planner. Optimizes the trajectory according to a cost function.
+  * Lattice planner.
+
+For the velocity profilte generation, we optimize the following values:
+  * Smoothness. Minimize jerk (derivative of the acceleration)
+  * Deviation from reference, i.e. optimal path (which can be unfeasible)
+  * Acceleration limit
