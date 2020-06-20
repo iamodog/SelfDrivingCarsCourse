@@ -89,9 +89,7 @@ There is three types of maps commonly used in self-driving:
 
 -   The localization map with points cloud ![](Course_1/localiz_map.png)
 -   The occupancy grid map ![](Course_1/occupancy_grid.png)
--   The detailed road map ![](Course_1/
-
-  detailed_road.png)
+-   The detailed road map ![](Course_1/detailed_road.png)
 
 Safety Assurance for Self-Driving Vehicles
 ==========================================
